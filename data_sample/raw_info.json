@@ -1,0 +1,14 @@
+{
+    "informationBlobs": [
+        {
+            "title": "THIS IS THE FORMAT THAT THE DATA SHOULD LOOK FOLLOW",
+            "content": "THE FILE SHOULD BE NAMED 'raw_info.json'",
+            "url": "some url"
+        },
+        {
+            "title": "another title...",
+            "content": "another content...",
+            "url": "another url, etc..."
+        }
+    ]
+}
