@@ -10,6 +10,19 @@ converts the data to jsonl and appends a "job" to each datapoint, which is the r
 #### p2
 example provided by OpenAI, performs the assigned job (vectorization) on each article
 
+To run:
+```bash
+python src/p2.api_request_parallel_processor.py \
+  --requests_filepath data_sample/converted.jsonl \
+  --save_filepath data_sample/embeddings.jsonl \
+  --request_url https://api.openai.com/v1/embeddings \
+  --max_requests_per_minute 1500 \
+  --max_tokens_per_minute 6250000 \
+  --token_encoding_name cl100k_base \
+  --max_attempts 5 \
+  --logging_level 20
+```
+
 #### p3
 converts the data to a csv, the required input type for the `p5.upload_to_pinecone.py` file
 
