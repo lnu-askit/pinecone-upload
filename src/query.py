@@ -18,11 +18,15 @@ print(f"Pinecone index info: {pinecone.whoami()} \n")
 
 MODEL="text-embedding-ada-002"
 
-query = ""
+query = "Jag behöver hjälp med min VPN på Mac"
 
 xq = openai.Embedding.create(input=query, engine=MODEL)['data'][0]['embedding']
 #print(xq)
 
 res = index.query([xq], top_k=5, include_metadata=True, namespace="articles")
 print('question: ' + query)
-print(res )
+
+for match in res['matches']:
+    print('score ' + str(match['score']))
+    print(match['metadata']['text'] + '\n')
+
